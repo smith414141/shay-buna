@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creator Login – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">☕ Shay Buna</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="signup.html" class="btn-primary">Join as Creator →</a>
+      </div>
+    </nav>
+
+    <div class="login-page">
+      <!-- LEFT -->
+      <div class="login-left">
+        <h2>Welcome back to Shay Buna</h2>
+        <p>
+          Log in to manage your page, track supporters, and withdraw your
+          earnings.
+        </p>
+        <div class="benefit-list">
+          <div class="benefit">
+            <span>📊</span>
+            <div>
+              <h4>Your dashboard awaits</h4>
+              <p>See your latest supporters and earnings in real time.</p>
+            </div>
+          </div>
+          <div class="benefit">
+            <span>💸</span>
+            <div>
+              <h4>Your money is ready</h4>
+              <p>
+                Earnings settle to your Telebirr or CBEBirr within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="login-form-box">
+        <h3>Creator Login</h3>
+        <p class="form-sub">
+          Don't have an account?
+          <a href="signup.html" style="color: #c0622a">Join free →</a>
+        </p>
+
+        <input
+          type="email"
+          class="form-input"
+          id="loginEmail"
+          placeholder="Email address"
+        />
+        <input
+          type="password"
+          class="form-input"
+          id="loginPassword"
+          placeholder="Password"
+        />
+
+        <button class="btn-pay" onclick="handleLogin()">
+          Login to Dashboard
+        </button>
+
+        <p class="pay-note" style="margin-top: 16px">
+          <a href="#" style="color: #c0622a">Forgot your password?</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

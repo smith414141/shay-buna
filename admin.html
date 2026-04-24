@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">
+        ☕ Shay Buna <span class="admin-badge">ADMIN</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">View Site</a>
+        <a href="index.html" class="btn-secondary">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard-page">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-avatar">🛡️</div>
+          <h4>Admin</h4>
+          <span>Platform Manager</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" class="sidebar-link active">📊 Overview</a>
+          <a href="#" class="sidebar-link">👥 Creators</a>
+          <a href="#" class="sidebar-link">💸 Transactions</a>
+          <a href="#" class="sidebar-link">🚨 Reports</a>
+          <a href="#" class="sidebar-link">⚙️ Settings</a>
+        </nav>
+      </div>
+
+      <!-- MAIN -->
+      <div class="dashboard-main">
+        <div class="dashboard-header">
+          <div>
+            <h2>Platform Overview 🛡️</h2>
+            <p>Everything happening on Shay Buna</p>
+          </div>
+        </div>
+
+        <!-- PLATFORM STATS -->
+        <div class="dash-stats">
+          <div class="dash-stat-card">
+            <span class="stat-icon">👥</span>
+            <div>
+              <h3>524</h3>
+              <p>Total Creators</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">💸</span>
+            <div>
+              <h3>ETB 2.4M</h3>
+              <p>Total Processed</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">📈</span>
+            <div>
+              <h3>ETB 120K</h3>
+              <p>Platform Revenue (5%)</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">🆕</span>
+            <div>
+              <h3>38</h3>
+              <p>New This Month</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PENDING APPROVALS -->
+        <div class="dash-section">
+          <h4>⚠️ Pending Creator Approvals</h4>
+          <table class="supporters-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Category</th>
+                <th>Joined</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Yonas Bekele</td>
+                <td>@yonas_music</td>
+                <td>Music</td>
+                <td>Apr 25, 2026</td>
+                <td>
+                  <button class="approve-btn" onclick="approveCreator(this)">
+                    ✅ Approve
+                  </button>
+                  <button class="reject-btn" onclick="rejectCreator(this)">
+                    ❌ Reject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Hana Girma</td>
+                <td>@hana_art</td>
+                <td>Art</td>
+                <td>Apr 24, 2026</td>
+                <td>
+                  <button class="approve-btn" onclick="approveCreator(this)">
+                    ✅ Approve
+                  </button>
+                  <button class="reject-btn" onclick="rejectCreator(this)">
+                    ❌ Reject
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Biruk T.</td>
+                <td>@biruk_tech</td>
+                <td>Tech</td>
+                <td>Apr 24, 2026</td>
+                <td>
+                  <button class="approve-btn" onclick="approveCreator(this)">
+                    ✅ Approve
+                  </button>
+                  <button class="reject-btn" onclick="rejectCreator(this)">
+                    ❌ Reject
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ALL CREATORS -->
+        <div class="dash-section">
+          <h4>👥 All Creators</h4>
+          <table class="supporters-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Category</th>
+                <th>Total Earned</th>
+                <th>Platform Cut</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ismael A.</td>
+                <td>@ismael_tech</td>
+                <td>Tech</td>
+                <td class="amount-col">ETB 24,800</td>
+                <td class="amount-col">ETB 1,240</td>
+                <td><span class="status-active">Active</span></td>
+              </tr>
+              <tr>
+                <td>Bereket H.</td>
+                <td>@bereket_music</td>
+                <td>Music</td>
+                <td class="amount-col">ETB 18,500</td>
+                <td class="amount-col">ETB 925</td>
+                <td><span class="status-active">Active</span></td>
+              </tr>
+              <tr>
+                <td>Sara T.</td>
+                <td>@sara_art</td>
+                <td>Art</td>
+                <td class="amount-col">ETB 9,200</td>
+                <td class="amount-col">ETB 460</td>
+                <td><span class="status-active">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

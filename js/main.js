@@ -89,3 +89,26 @@ function copyLink() {
     alert("Link copied! ☕");
   }
 }
+// LOGIN
+function handleLogin() {
+  const email = document.getElementById("loginEmail")?.value;
+  const password = document.getElementById("loginPassword")?.value;
+  if (!email || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  window.location.href = "dashboard.html";
+}
+// ADMIN APPROVE/REJECT
+function approveCreator(btn) {
+  const row = btn.closest("tr");
+  row.style.opacity = "0.5";
+  btn.textContent = "✅ Approved";
+  btn.disabled = true;
+  row.nextElementSibling?.remove();
+}
+
+function rejectCreator(btn) {
+  const row = btn.closest("tr");
+  row.remove();
+}
