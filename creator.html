@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support a Creator – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">☕ Shay Buna</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#" class="btn-primary">Join as Creator →</a>
+      </div>
+    </nav>
+
+    <!-- CREATOR PAGE -->
+    <div class="creator-page">
+      <!-- LEFT: CREATOR PROFILE -->
+      <div class="creator-profile">
+        <div class="profile-avatar">💻</div>
+        <h2>Ismael Abdulfetha</h2>
+        <span class="profile-handle">@ismael_tech</span>
+        <p class="profile-bio">
+          Teaching programming in Amharic to make tech accessible for all
+          Ethiopians. Every coffee keeps me creating free tutorials! ☕
+        </p>
+
+        <div class="profile-stats">
+          <div>
+            <h4>248</h4>
+            <p>Supporters</p>
+          </div>
+          <div>
+            <h4>ETB 24,800</h4>
+            <p>Total Received</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-btn">▶ YouTube</a>
+          <a href="#" class="social-btn">🎵 TikTok</a>
+          <a href="#" class="social-btn">✈ Telegram</a>
+        </div>
+
+        <!-- RECENT SUPPORTERS -->
+        <div class="recent-supporters">
+          <h4>Recent Supporters</h4>
+          <div class="supporter">
+            <span class="supporter-avatar">👤</span>
+            <div>
+              <strong>Abebe T.</strong>
+              <p>Bought a Buna ☕ · 2 hours ago</p>
+            </div>
+            <span class="supporter-amount">100 ETB</span>
+          </div>
+          <div class="supporter">
+            <span class="supporter-avatar">👤</span>
+            <div>
+              <strong>Tigist M.</strong>
+              <p>Bought a Tibs 🍖 · 5 hours ago</p>
+            </div>
+            <span class="supporter-amount">500 ETB</span>
+          </div>
+          <div class="supporter">
+            <span class="supporter-avatar">👤</span>
+            <div>
+              <strong>Someone</strong>
+              <p>Bought a Shay 🍵 · yesterday</p>
+            </div>
+            <span class="supporter-amount">50 ETB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: SUPPORT FORM -->
+      <div class="support-form">
+        <h3>Buy Ismael a coffee ☕</h3>
+        <p class="form-sub">Choose what you want to send</p>
+
+        <!-- TIER SELECTOR -->
+        <div class="tiers">
+          <button class="tier-btn" data-amount="50">
+            <span class="tier-emoji">🍵</span>
+            <span class="tier-name">Shay</span>
+            <span class="tier-price">50 ETB</span>
+          </button>
+          <button class="tier-btn active" data-amount="100">
+            <span class="tier-emoji">☕</span>
+            <span class="tier-name">Buna</span>
+            <span class="tier-price">100 ETB</span>
+          </button>
+          <button class="tier-btn" data-amount="200">
+            <span class="tier-emoji">🥘</span>
+            <span class="tier-name">Firfir</span>
+            <span class="tier-price">200 ETB</span>
+          </button>
+          <button class="tier-btn" data-amount="500">
+            <span class="tier-emoji">🍖</span>
+            <span class="tier-name">Tibs</span>
+            <span class="tier-price">500 ETB</span>
+          </button>
+          <button class="tier-btn" data-amount="1000">
+            <span class="tier-emoji">🥩</span>
+            <span class="tier-name">Kitfo</span>
+            <span class="tier-price">1000 ETB</span>
+          </button>
+          <button class="tier-btn" data-amount="custom">
+            <span class="tier-emoji">✏️</span>
+            <span class="tier-name">Custom</span>
+            <span class="tier-price">Any ETB</span>
+          </button>
+        </div>
+
+        <!-- CUSTOM AMOUNT -->
+        <div class="custom-amount" id="customAmount" style="display: none">
+          <input
+            type="number"
+            id="customInput"
+            placeholder="Enter amount in ETB"
+            min="10"
+          />
+        </div>
+
+        <!-- QUANTITY -->
+        <div class="quantity-row">
+          <span>Quantity</span>
+          <div class="quantity-controls">
+            <button id="qtyMinus">−</button>
+            <span id="qtyDisplay">1</span>
+            <button id="qtyPlus">+</button>
+          </div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="totalDisplay">100 ETB</strong>
+        </div>
+
+        <!-- SUPPORTER INFO -->
+        <input
+          type="text"
+          class="form-input"
+          id="supporterName"
+          placeholder="Your name (or stay anonymous)"
+        />
+        <input
+          type="text"
+          class="form-input"
+          id="supporterPhone"
+          placeholder="Your Telebirr / CBEBirr number"
+        />
+        <textarea
+          class="form-input"
+          id="supporterMessage"
+          placeholder="Leave a message for Ismael... (optional)"
+          rows="3"
+        ></textarea>
+
+        <!-- SUBMIT -->
+        <button class="btn-pay" id="payBtn">
+          ☕ Send Coffee · <span id="payAmount">100 ETB</span>
+        </button>
+
+        <p class="pay-note">
+          Powered by Chapa · Secured payment via Telebirr & CBEBirr
+        </p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

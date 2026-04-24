@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join as Creator – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">☕ Shay Buna</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Creator Login</a>
+      </div>
+    </nav>
+
+    <!-- SIGNUP PAGE -->
+    <div class="signup-page">
+      <!-- LEFT: BENEFITS -->
+      <div class="signup-benefits">
+        <h2>Start receiving support from your fans today</h2>
+        <p>
+          Join hundreds of Ethiopian creators already earning from their
+          passion.
+        </p>
+
+        <div class="benefit-list">
+          <div class="benefit">
+            <span>☕</span>
+            <div>
+              <h4>Get your own page</h4>
+              <p>
+                A unique link you can share anywhere — TikTok, YouTube,
+                Telegram, Instagram.
+              </p>
+            </div>
+          </div>
+          <div class="benefit">
+            <span>💸</span>
+            <div>
+              <h4>Get paid in ETB</h4>
+              <p>
+                Fans pay you directly via Telebirr or CBEBirr. No bank card
+                needed.
+              </p>
+            </div>
+          </div>
+          <div class="benefit">
+            <span>📊</span>
+            <div>
+              <h4>Track your supporters</h4>
+              <p>
+                See who supports you, how much, and when — all in your
+                dashboard.
+              </p>
+            </div>
+          </div>
+          <div class="benefit">
+            <span>🔒</span>
+            <div>
+              <h4>Secure & local</h4>
+              <p>
+                Built for Ethiopia. Powered by Chapa. Your money settles within
+                24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: SIGNUP FORM -->
+      <div class="signup-form-box">
+        <h3>Create your creator page</h3>
+        <p class="form-sub">Free to join. Takes 2 minutes.</p>
+
+        <!-- STEP INDICATOR -->
+        <div class="steps-indicator">
+          <div class="step-dot active" id="dot1">1</div>
+          <div class="step-line"></div>
+          <div class="step-dot" id="dot2">2</div>
+          <div class="step-line"></div>
+          <div class="step-dot" id="dot3">3</div>
+        </div>
+
+        <!-- STEP 1: ACCOUNT -->
+        <div class="form-step" id="step1">
+          <h4>Account Details</h4>
+          <input
+            type="text"
+            class="form-input"
+            id="fullName"
+            placeholder="Full name"
+          />
+          <input
+            type="email"
+            class="form-input"
+            id="email"
+            placeholder="Email address"
+          />
+          <input
+            type="password"
+            class="form-input"
+            id="password"
+            placeholder="Create a password"
+          />
+          <input
+            type="text"
+            class="form-input"
+            id="username"
+            placeholder="Username (e.g. ismael_tech)"
+          />
+          <p class="username-preview">
+            Your page: shaybuna.com/<span id="usernamePreview">yourname</span>
+          </p>
+          <button class="btn-primary btn-full" onclick="goToStep(2)">
+            Continue →
+          </button>
+        </div>
+
+        <!-- STEP 2: PROFILE -->
+        <div class="form-step" id="step2" style="display: none">
+          <h4>Your Profile</h4>
+          <textarea
+            class="form-input"
+            placeholder="Bio — tell fans who you are and what you create"
+            rows="3"
+          ></textarea>
+          <select class="form-input">
+            <option value="">Creator category</option>
+            <option>Music</option>
+            <option>Art & Illustration</option>
+            <option>Tech & Education</option>
+            <option>Comedy & Entertainment</option>
+            <option>Gaming & Streaming</option>
+            <option>Food & Lifestyle</option>
+            <option>Sports & Fitness</option>
+            <option>Other</option>
+          </select>
+          <input
+            type="text"
+            class="form-input"
+            placeholder="YouTube link (optional)"
+          />
+          <input
+            type="text"
+            class="form-input"
+            placeholder="TikTok link (optional)"
+          />
+          <input
+            type="text"
+            class="form-input"
+            placeholder="Telegram link (optional)"
+          />
+          <input
+            type="text"
+            class="form-input"
+            placeholder="Instagram link (optional)"
+          />
+          <div class="btn-row">
+            <button class="btn-secondary" onclick="goToStep(1)">← Back</button>
+            <button class="btn-primary" onclick="goToStep(3)">
+              Continue →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3: PAYMENT -->
+        <div class="form-step" id="step3" style="display: none">
+          <h4>Payment Setup</h4>
+          <p class="step-note">
+            This is where your supporters' money will be sent.
+          </p>
+
+          <select class="form-input" id="paymentMethod">
+            <option value="">Select payment method</option>
+            <option>Telebirr</option>
+            <option>CBEBirr</option>
+            <option>Bank Transfer</option>
+          </select>
+
+          <input
+            type="text"
+            class="form-input"
+            id="paymentNumber"
+            placeholder="Your Telebirr / CBEBirr number"
+          />
+
+          <div class="tier-setup">
+            <h5>Set your support tiers</h5>
+            <p>Customize the names and amounts fans can send you.</p>
+            <div class="tier-inputs">
+              <div class="tier-input-row">
+                <span>🍵</span>
+                <input
+                  type="text"
+                  value="Shay"
+                  class="form-input tier-name-input"
+                />
+                <input
+                  type="number"
+                  value="50"
+                  class="form-input tier-amount-input"
+                />
+                <span>ETB</span>
+              </div>
+              <div class="tier-input-row">
+                <span>☕</span>
+                <input
+                  type="text"
+                  value="Buna"
+                  class="form-input tier-name-input"
+                />
+                <input
+                  type="number"
+                  value="100"
+                  class="form-input tier-amount-input"
+                />
+                <span>ETB</span>
+              </div>
+              <div class="tier-input-row">
+                <span>🥘</span>
+                <input
+                  type="text"
+                  value="Firfir"
+                  class="form-input tier-name-input"
+                />
+                <input
+                  type="number"
+                  value="200"
+                  class="form-input tier-amount-input"
+                />
+                <span>ETB</span>
+              </div>
+              <div class="tier-input-row">
+                <span>🍖</span>
+                <input
+                  type="text"
+                  value="Tibs"
+                  class="form-input tier-name-input"
+                />
+                <input
+                  type="number"
+                  value="500"
+                  class="form-input tier-amount-input"
+                />
+                <span>ETB</span>
+              </div>
+              <div class="tier-input-row">
+                <span>🥩</span>
+                <input
+                  type="text"
+                  value="Kitfo"
+                  class="form-input tier-name-input"
+                />
+                <input
+                  type="number"
+                  value="1000"
+                  class="form-input tier-amount-input"
+                />
+                <span>ETB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn-secondary" onclick="goToStep(2)">← Back</button>
+            <button class="btn-pay" onclick="handleSignup()">
+              🎉 Create My Page
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
