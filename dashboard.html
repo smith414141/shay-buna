@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">☕ Shay Buna</div>
+      <div class="nav-links">
+        <a href="creator.html">My Page</a>
+        <a href="index.html" class="btn-secondary">Logout</a>
+      </div>
+    </nav>
+
+    <div class="dashboard-page">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-avatar">💻</div>
+          <h4>Ismael A.</h4>
+          <span>@ismael_tech</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" class="sidebar-link active">📊 Overview</a>
+          <a href="#" class="sidebar-link">☕ Supporters</a>
+          <a href="#" class="sidebar-link">💸 Earnings</a>
+          <a href="#" class="sidebar-link">⚙️ Settings</a>
+          <a href="#" class="sidebar-link">🔗 My Page</a>
+        </nav>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="dashboard-main">
+        <div class="dashboard-header">
+          <div>
+            <h2>Welcome back, Ismael 👋</h2>
+            <p>Here's how your page is doing</p>
+          </div>
+          <a href="creator.html" class="btn-primary">View My Page →</a>
+        </div>
+
+        <!-- STATS -->
+        <div class="dash-stats">
+          <div class="dash-stat-card">
+            <span class="stat-icon">☕</span>
+            <div>
+              <h3>ETB 24,800</h3>
+              <p>Total Earned</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">👥</span>
+            <div>
+              <h3>248</h3>
+              <p>Total Supporters</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">📅</span>
+            <div>
+              <h3>ETB 3,200</h3>
+              <p>This Month</p>
+            </div>
+          </div>
+          <div class="dash-stat-card">
+            <span class="stat-icon">🔗</span>
+            <div>
+              <h3>1,240</h3>
+              <p>Page Visits</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- YOUR LINK -->
+        <div class="dash-link-box">
+          <p>Your public page link</p>
+          <div class="link-row">
+            <span id="pageLink">shaybuna.com/ismael_tech</span>
+            <button class="btn-primary" onclick="copyLink()">Copy Link</button>
+          </div>
+        </div>
+
+        <!-- RECENT SUPPORTERS -->
+        <div class="dash-section">
+          <h4>Recent Supporters</h4>
+          <table class="supporters-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Tier</th>
+                <th>Amount</th>
+                <th>Message</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Abebe T.</td>
+                <td>☕ Buna</td>
+                <td class="amount-col">100 ETB</td>
+                <td>Keep up the great work!</td>
+                <td>Apr 25, 2026</td>
+              </tr>
+              <tr>
+                <td>Tigist M.</td>
+                <td>🍖 Tibs</td>
+                <td class="amount-col">500 ETB</td>
+                <td>Love your tutorials 🙏</td>
+                <td>Apr 25, 2026</td>
+              </tr>
+              <tr>
+                <td>Someone</td>
+                <td>🍵 Shay</td>
+                <td class="amount-col">50 ETB</td>
+                <td>—</td>
+                <td>Apr 24, 2026</td>
+              </tr>
+              <tr>
+                <td>Dawit K.</td>
+                <td>🥩 Kitfo</td>
+                <td class="amount-col">1000 ETB</td>
+                <td>You changed my life bro</td>
+                <td>Apr 23, 2026</td>
+              </tr>
+              <tr>
+                <td>Meron H.</td>
+                <td>🥘 Firfir</td>
+                <td class="amount-col">200 ETB</td>
+                <td>More Amharic content please!</td>
+                <td>Apr 22, 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

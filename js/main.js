@@ -81,3 +81,11 @@ function handleSignup() {
     "Page created! Welcome to Shay Buna ☕\n\nNext step: connect your Chapa account to go live."
   );
 }
+// COPY LINK
+function copyLink() {
+  const link = document.getElementById("pageLink")?.textContent;
+  if (link) {
+    navigator.clipboard.writeText(link);
+    alert("Link copied! ☕");
+  }
+}
