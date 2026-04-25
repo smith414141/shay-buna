@@ -11,22 +11,67 @@
     <nav>
       <div class="logo">☕ Shay Buna</div>
       <div class="nav-links">
-        <a href="login.html">Creator Login</a>
-        <a href="signup.html" class="btn-primary">Join as Creator →</a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" onclick="setLang('am')">አማ</button>
+          <button class="lang-btn" onclick="setLang('or')">OR</button>
+        </div>
+        <a
+          href="login.html"
+          data-en="Creator Login"
+          data-am="ፈጣሪ መግቢያ"
+          data-or="Seensa Uumaa"
+          >Creator Login</a
+        >
+        <a
+          href="signup.html"
+          class="btn-primary"
+          data-en="Join as Creator →"
+          data-am="እንደ ፈጣሪ ይቀላቀሉ →"
+          data-or="Uumaa ta'i →"
+          >Join as Creator →</a
+        >
       </div>
     </nav>
 
     <!-- HERO -->
+    <!-- HERO -->
     <section class="hero">
       <span class="badge">☕ Ethiopia's Creator Support Platform</span>
-      <h1>Buy your favorite <span class="highlight">creator</span> a coffee</h1>
-      <p>
+      <h1 data-en="Buy your favorite" data-am="ለሚወዱት" data-or="Kan jaallattu">
+        Buy your favorite
+        <span class="highlight" data-en="creator" data-am="ፈጣሪ" data-or="uumaa"
+          >creator</span
+        >
+        <span data-en="a coffee" data-am="ቡና ይግዙ" data-or="bunaa bitu"
+          >a coffee</span
+        >
+      </h1>
+      <p
+        data-en="Shay Buna lets fans support their favorite Ethiopian content creators with micro-payments in ETB — as simple as buying them a coffee."
+        data-am="ሸይ ቡና አድናቂዎች በETB ጥቃቅን ክፍያዎች የሚወዷቸውን የኢትዮጵያ ፈጣሪዎች እንዲደግፉ ያስችላቸዋል።"
+        data-or="Shay Buna deggartoota uumaawwan Itoophiyaa jaallataman ETB'n deeggaruu ni dandeessisa."
+      >
         Shay Buna lets fans support their favorite Ethiopian content creators
         with micro-payments in ETB — as simple as buying them a coffee.
       </p>
       <div class="hero-buttons">
-        <a href="signup.html" class="btn-primary">Start Your Page →</a>
-        <a href="creator.html" class="btn-secondary">♡ Support a Creator</a>
+        <a
+          href="signup.html"
+          class="btn-primary"
+          data-en="Start Your Page →"
+          data-am="ገጽዎን ይጀምሩ →"
+          data-or="Fuula Kee Eegali →"
+          >Start Your Page →</a
+        >
+        <a
+          href="explore.html"
+          class="btn-secondary"
+          data-en="♡ Support a Creator"
+          data-am="♡ ፈጣሪን ይደግፉ"
+          data-or="♡ Uumaa Deeggaruu"
+          >♡ Support a Creator</a
+        >
       </div>
     </section>
 

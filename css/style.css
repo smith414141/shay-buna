@@ -1490,3 +1490,28 @@ footer {
     padding: 10px 12px;
   }
 }
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  background: #ece8e3;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.lang-btn.active {
+  background: #3b1f0e;
+  color: #fff;
+}

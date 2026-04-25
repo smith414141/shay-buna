@@ -81,6 +81,73 @@ function handleSignup() {
     "Page created! Welcome to Shay Buna ☕\n\nNext step: connect your Chapa account to go live."
   );
 }
+// CHAPA PAYMENT
+document.getElementById("payBtn")?.addEventListener("click", async () => {
+  const name = document.getElementById("supporterName")?.value || "Anonymous";
+  const phone = document.getElementById("supporterPhone")?.value;
+  const message = document.getElementById("supporterMessage")?.value || "";
+
+  if (!phone) {
+    alert("Please enter your Telebirr or CBEBirr number");
+    return;
+  }
+
+  const amount =
+    selectedAmount === "custom"
+      ? parseInt(customInput?.value) || 0
+      : selectedAmount * quantity;
+
+  if (amount < 10) {
+    alert("Minimum amount is 10 ETB");
+    return;
+  }
+
+  const btn = document.getElementById("payBtn");
+  btn.textContent = "Processing...";
+  btn.disabled = true;
+
+  try {
+    const response = await fetch(
+      "https://api.chapa.co/v1/transaction/initialize",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer CHASECK_TEST-b0g8De2VLnKZbLH41esfc7dVUah2jx8L",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: amount.toString(),
+          currency: "ETB",
+          email: "supporter@shaybuna.com",
+          first_name: name.split(" ")[0] || "Fan",
+          last_name: name.split(" ")[1] || "",
+          phone_number: phone,
+          tx_ref: "shaybuna-" + Date.now(),
+          callback_url: "https://shay-buna.netlify.app/creator.html",
+          return_url: "https://shay-buna.netlify.app/creator.html",
+          customization: {
+            title: "Shay Buna Support",
+            description: message || "Supporting a creator on Shay Buna",
+          },
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.status === "success") {
+      window.location.href = data.data.checkout_url;
+    } else {
+      alert("Payment failed: " + (data.message || "Please try again"));
+      btn.textContent = "☕ Send Coffee · " + amount + " ETB";
+      btn.disabled = false;
+    }
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+    btn.textContent = "☕ Send Coffee · " + amount + " ETB";
+    btn.disabled = false;
+  }
+});
 // COPY LINK
 function copyLink() {
   const link = document.getElementById("pageLink")?.textContent;
@@ -136,3 +203,92 @@ function filterCreators() {
     card.style.display = matchSearch && matchFilter ? "flex" : "none";
   });
 }
+// LANGUAGE SWITCHER
+const translations = {
+  en: {
+    // NAVBAR
+    "Creator Login": "Creator Login",
+    "Join as Creator →": "Join as Creator →",
+    // HERO
+    "Buy your favorite": "Buy your favorite",
+    creator: "creator",
+    "a coffee": "a coffee",
+    "Shay Buna lets fans support their favorite Ethiopian content creators with micro-payments in ETB — as simple as buying them a coffee.":
+      "Shay Buna lets fans support their favorite Ethiopian content creators with micro-payments in ETB — as simple as buying them a coffee.",
+    "Start Your Page →": "Start Your Page →",
+    "♡ Support a Creator": "♡ Support a Creator",
+    // STATS
+    "Active Creators": "Active Creators",
+    "Sent to Creators": "Sent to Creators",
+    Supporters: "Supporters",
+    "Local Payments": "Local Payments",
+    // HOW IT WORKS
+    "How it works": "How it works",
+    "Create your page": "Create your page",
+    "Share your link": "Share your link",
+    "Get supported": "Get supported",
+  },
+  am: {
+    "Creator Login": "ፈጣሪ መግቢያ",
+    "Join as Creator →": "እንደ ፈጣሪ ይቀላቀሉ →",
+    "Buy your favorite": "ለሚወዱት",
+    creator: "ፈጣሪ",
+    "a coffee": "ቡና ይግዙ",
+    "Shay Buna lets fans support their favorite Ethiopian content creators with micro-payments in ETB — as simple as buying them a coffee.":
+      "ሸይ ቡና አድናቂዎች በETB ጥቃቅን ክፍያዎች የሚወዷቸውን የኢትዮጵያ ፈጣሪዎች እንዲደግፉ ያስችላቸዋል።",
+    "Start Your Page →": "ገጽዎን ይጀምሩ →",
+    "♡ Support a Creator": "♡ ፈጣሪን ይደግፉ",
+    "Active Creators": "ንቁ ፈጣሪዎች",
+    "Sent to Creators": "ለፈጣሪዎች የተላከ",
+    Supporters: "ደጋፊዎች",
+    "Local Payments": "የአካባቢ ክፍያዎች",
+    "How it works": "እንዴት እንደሚሰራ",
+    "Create your page": "ገጽዎን ይፍጠሩ",
+    "Share your link": "ሊንክዎን ያጋሩ",
+    "Get supported": "ድጋፍ ያግኙ",
+  },
+  or: {
+    "Creator Login": "Seensa Uumaa",
+    "Join as Creator →": "Uumaa ta'i →",
+    "Buy your favorite": "Kan jaallattu",
+    creator: "uumaa",
+    "a coffee": "bunaa bitu",
+    "Shay Buna lets fans support their favorite Ethiopian content creators with micro-payments in ETB — as simple as buying them a coffee.":
+      "Shay Buna deggartoota uumaawwan Itoophiyaa jaallataman ETB'n deeggaruu ni dandeessisa.",
+    "Start Your Page →": "Fuula Kee Eegali →",
+    "♡ Support a Creator": "♡ Uumaa Deeggaruu",
+    "Active Creators": "Uumaawwan Socho'oo",
+    "Sent to Creators": "Uumaawwaniif Ergame",
+    Supporters: "Deeggartoota",
+    "Local Payments": "Kaffaltii Naannoo",
+    "How it works": "Akkamitti akka hojjetu",
+    "Create your page": "Fuula kee uumi",
+    "Share your link": "Hidhaa kee qoodi",
+    "Get supported": "Deeggarsa argadhu",
+  },
+};
+
+function setLang(lang) {
+  // Update active button
+  document
+    .querySelectorAll(".lang-btn")
+    .forEach((btn) => btn.classList.remove("active"));
+  document
+    .querySelector(`.lang-btn[onclick="setLang('${lang}')"]`)
+    ?.classList.add("active");
+
+  // Save to localStorage
+  localStorage.setItem("shaybuna_lang", lang);
+
+  // Update all elements with data attributes
+  document.querySelectorAll("[data-en]").forEach((el) => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text && el.children.length === 0) el.textContent = text;
+  });
+}
+
+// Load saved language on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("shaybuna_lang") || "en";
+  setLang(savedLang);
+});
