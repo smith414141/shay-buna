@@ -112,3 +112,27 @@ function rejectCreator(btn) {
   const row = btn.closest("tr");
   row.remove();
 }
+// EXPLORE FILTER
+let currentFilter = "all";
+
+function setFilter(category, btn) {
+  currentFilter = category;
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+  filterCreators();
+}
+
+function filterCreators() {
+  const search =
+    document.getElementById("searchInput")?.value.toLowerCase() || "";
+  const cards = document.querySelectorAll(".explore-card");
+  cards.forEach((card) => {
+    const name = card.dataset.name || "";
+    const category = card.dataset.category || "";
+    const matchSearch = name.includes(search);
+    const matchFilter = currentFilter === "all" || category === currentFilter;
+    card.style.display = matchSearch && matchFilter ? "flex" : "none";
+  });
+}

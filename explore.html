@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Creators – Shay Buna</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">☕ Shay Buna</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Creator Login</a>
+        <a href="signup.html" class="btn-primary">Join as Creator →</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="explore-hero">
+      <h1>Explore Creators ☕</h1>
+      <p>Discover and support Ethiopian creators doing amazing work</p>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search creators..."
+          oninput="filterCreators()"
+        />
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="explore-filters">
+      <button class="filter-btn active" onclick="setFilter('all', this)">
+        All
+      </button>
+      <button class="filter-btn" onclick="setFilter('music', this)">
+        🎵 Music
+      </button>
+      <button class="filter-btn" onclick="setFilter('art', this)">
+        🎨 Art
+      </button>
+      <button class="filter-btn" onclick="setFilter('tech', this)">
+        💻 Tech
+      </button>
+      <button class="filter-btn" onclick="setFilter('comedy', this)">
+        😂 Comedy
+      </button>
+      <button class="filter-btn" onclick="setFilter('gaming', this)">
+        🎮 Gaming
+      </button>
+      <button class="filter-btn" onclick="setFilter('food', this)">
+        🍽️ Food
+      </button>
+    </div>
+
+    <!-- CREATOR GRID -->
+    <div class="explore-grid" id="creatorGrid">
+      <div
+        class="explore-card"
+        data-category="tech"
+        data-name="ismael abdulfetha"
+      >
+        <div class="explore-avatar">💻</div>
+        <div class="explore-info">
+          <h4>Ismael Abdulfetha</h4>
+          <span>@ismael_tech</span>
+          <p>
+            Teaching programming in Amharic to make tech accessible for all
+            Ethiopians.
+          </p>
+          <div class="explore-meta">
+            <span>💻 Tech</span>
+            <span>248 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+
+      <div class="explore-card" data-category="music" data-name="bereket hailu">
+        <div class="explore-avatar">🎵</div>
+        <div class="explore-info">
+          <h4>Bereket Hailu</h4>
+          <span>@bereket_music</span>
+          <p>
+            Musician & songwriter blending traditional Ethiopian music with
+            modern sounds.
+          </p>
+          <div class="explore-meta">
+            <span>🎵 Music</span>
+            <span>185 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+
+      <div class="explore-card" data-category="art" data-name="sara tadesse">
+        <div class="explore-avatar">🎨</div>
+        <div class="explore-info">
+          <h4>Sara Tadesse</h4>
+          <span>@sara_art</span>
+          <p>
+            Digital artist & illustrator telling Ethiopian stories through her
+            art.
+          </p>
+          <div class="explore-meta">
+            <span>🎨 Art</span>
+            <span>92 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+
+      <div class="explore-card" data-category="comedy" data-name="dawit comedy">
+        <div class="explore-avatar">😂</div>
+        <div class="explore-info">
+          <h4>Dawit Comedy</h4>
+          <span>@dawit_lol</span>
+          <p>
+            Making Ethiopia laugh one skit at a time. Daily comedy content on
+            TikTok.
+          </p>
+          <div class="explore-meta">
+            <span>😂 Comedy</span>
+            <span>412 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+
+      <div class="explore-card" data-category="gaming" data-name="abel gaming">
+        <div class="explore-avatar">🎮</div>
+        <div class="explore-info">
+          <h4>Abel Gaming</h4>
+          <span>@abel_plays</span>
+          <p>Ethiopia's top FIFA streamer. Live every night on YouTube.</p>
+          <div class="explore-meta">
+            <span>🎮 Gaming</span>
+            <span>330 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+
+      <div class="explore-card" data-category="food" data-name="meron kitchen">
+        <div class="explore-avatar">🍽️</div>
+        <div class="explore-info">
+          <h4>Meron's Kitchen</h4>
+          <span>@meron_cook</span>
+          <p>
+            Traditional Ethiopian recipes made modern. Cook with me every
+            weekend!
+          </p>
+          <div class="explore-meta">
+            <span>🍽️ Food</span>
+            <span>156 supporters</span>
+          </div>
+        </div>
+        <a href="creator.html" class="btn-primary">☕ Support</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo" style="color: #fff">☕ Shay Buna</div>
+          <p>Supporting Ethiopian creators, one coffee at a time.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Platform</h5>
+          <a href="explore.html">Explore Creators</a>
+          <a href="signup.html">Join as Creator</a>
+          <a href="index.html">How it Works</a>
+        </div>
+        <div class="footer-links">
+          <h5>Company</h5>
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Shay Buna. Built in Ethiopia 🇪🇹</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

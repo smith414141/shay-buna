@@ -1195,3 +1195,136 @@ footer {
   font-size: 0.8rem;
   font-weight: 600;
 }
+/* EXPLORE PAGE */
+.explore-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: #faf7f4;
+}
+
+.explore-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.explore-hero p {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid #ece8e3;
+  border-radius: 999px;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+}
+
+.search-bar input:focus {
+  border-color: #3b1f0e;
+}
+
+/* FILTERS */
+.explore-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border: 2px solid #ece8e3;
+  border-radius: 999px;
+  background: #fff;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #3b1f0e;
+  color: #3b1f0e;
+}
+
+.filter-btn.active {
+  background: #3b1f0e;
+  border-color: #3b1f0e;
+  color: #fff;
+}
+
+/* EXPLORE GRID */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+}
+
+.explore-card {
+  background: #fff;
+  border: 1px solid #ece8e3;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.explore-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.explore-avatar {
+  font-size: 2.5rem;
+  background: #faf7f4;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ece8e3;
+}
+
+.explore-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.explore-info span {
+  font-size: 0.85rem;
+  color: #c0622a;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.explore-info p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.explore-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #888;
+}
