@@ -107,31 +107,25 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
   btn.disabled = true;
 
   try {
-    const response = await fetch(
-      "https://api.chapa.co/v1/transaction/initialize",
-      {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer CHASECK_TEST-b0g8De2VLnKZbLH41esfc7dVUah2jx8L",
-          "Content-Type": "application/json",
+    const response = await fetch("/.netlify/functions/pay", {
+      method: "POST",
+
+      body: JSON.stringify({
+        amount: amount.toString(),
+        currency: "ETB",
+        email: "supporter@shaybuna.com",
+        first_name: name.split(" ")[0] || "Fan",
+        last_name: name.split(" ")[1] || "",
+        phone_number: phone,
+        tx_ref: "shaybuna-" + Date.now(),
+        callback_url: "https://shay-buna.netlify.app/creator.html",
+        return_url: "https://shay-buna.netlify.app/creator.html",
+        customization: {
+          title: "Shay Buna Support",
+          description: message || "Supporting a creator on Shay Buna",
         },
-        body: JSON.stringify({
-          amount: amount.toString(),
-          currency: "ETB",
-          email: "supporter@shaybuna.com",
-          first_name: name.split(" ")[0] || "Fan",
-          last_name: name.split(" ")[1] || "",
-          phone_number: phone,
-          tx_ref: "shaybuna-" + Date.now(),
-          callback_url: "https://shay-buna.netlify.app/creator.html",
-          return_url: "https://shay-buna.netlify.app/creator.html",
-          customization: {
-            title: "Shay Buna Support",
-            description: message || "Supporting a creator on Shay Buna",
-          },
-        }),
-      }
-    );
+      }),
+    });
 
     const data = await response.json();
 
