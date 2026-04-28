@@ -132,7 +132,7 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
     if (data.status === "success") {
       window.location.href = data.data.checkout_url;
     } else {
-      alert("Payment failed: " + (data.message || "Please try again"));
+      alert("Payment failed: " + JSON.stringify(data));
       btn.textContent = "☕ Send Coffee · " + amount + " ETB";
       btn.disabled = false;
     }
