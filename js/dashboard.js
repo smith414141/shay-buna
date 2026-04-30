@@ -24,7 +24,8 @@ onAuthStateChanged(auth, async (user) => {
         // Update username in sidebar
         const sidebarHandle = document.querySelector(".sidebar-profile span");
         if (sidebarHandle) sidebarHandle.textContent = `@${data.username}`;
-
+        const sidebarName = document.getElementById("sidebarName");
+        if (sidebarName) sidebarName.textContent = data.fullName;
         // Update page link
         const linkEl = document.getElementById("pageLink");
         if (linkEl)
