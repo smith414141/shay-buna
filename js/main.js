@@ -193,14 +193,28 @@ function copyLink() {
   }
 }
 // LOGIN
-function handleLogin() {
+async function handleLogin() {
   const email = document.getElementById("loginEmail")?.value;
   const password = document.getElementById("loginPassword")?.value;
+
   if (!email || !password) {
     alert("Please fill in all fields.");
     return;
   }
-  window.location.href = "dashboard.html";
+
+  const btn = document.querySelector(".btn-pay");
+  btn.textContent = "Logging in...";
+  btn.disabled = true;
+
+  try {
+    const { auth, signInWithEmailAndPassword } = await import("./firebase.js");
+    await signInWithEmailAndPassword(auth, email, password);
+    window.location.href = "dashboard.html";
+  } catch (err) {
+    alert("Login failed: " + err.message);
+    btn.textContent = "Login to Dashboard";
+    btn.disabled = false;
+  }
 }
 // ADMIN APPROVE/REJECT
 function approveCreator(btn) {
