@@ -163,7 +163,7 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
         callback_url: "https://shay-buna.netlify.app/creator.html",
         return_url: "https://shay-buna.netlify.app/creator.html",
         customization: {
-          title: "Shay Buna Support",
+          title: "Shay Buna",
           description: message || "Supporting a creator on Shay Buna",
         },
       }),
