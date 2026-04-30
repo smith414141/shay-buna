@@ -76,10 +76,52 @@ if (usernameInput) {
 }
 
 // SIGNUP SUBMIT
-function handleSignup() {
-  alert(
-    "Page created! Welcome to Shay Buna ☕\n\nNext step: connect your Chapa account to go live."
-  );
+async function handleSignup() {
+  const fullName = document.getElementById("fullName")?.value;
+  const email = document.getElementById("email")?.value;
+  const password = document.getElementById("password")?.value;
+  const username = document.getElementById("username")?.value;
+
+  if (!fullName || !email || !password || !username) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const btn = document.querySelector("#step3 .btn-pay");
+  btn.textContent = "Creating your page...";
+  btn.disabled = true;
+
+  try {
+    // Create auth account
+    const { auth, db, collection, addDoc, createUserWithEmailAndPassword } =
+      await import("./firebase.js");
+
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const uid = userCredential.user.uid;
+
+    // Save creator profile to Firestore
+    await addDoc(collection(db, "creators"), {
+      uid,
+      fullName,
+      email,
+      username,
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    });
+
+    alert(
+      "Page created! Welcome to Shay Buna ☕\n\nYour account is pending approval."
+    );
+    window.location.href = "login.html";
+  } catch (err) {
+    alert("Error: " + err.message);
+    btn.textContent = "🎉 Create My Page";
+    btn.disabled = false;
+  }
 }
 // CHAPA PAYMENT
 document.getElementById("payBtn")?.addEventListener("click", async () => {
@@ -121,7 +163,7 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
         callback_url: "https://shay-buna.netlify.app/creator.html",
         return_url: "https://shay-buna.netlify.app/creator.html",
         customization: {
-          title: "Shay Buna",
+          title: "Shay Buna Support",
           description: message || "Supporting a creator on Shay Buna",
         },
       }),
