@@ -172,6 +172,20 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
     const data = await response.json();
 
     if (data.status === "success") {
+      localStorage.setItem(
+        "pending_tx",
+        JSON.stringify({
+          tx_ref: body_data.tx_ref,
+          amount: amount,
+          creatorUid: "temp_uid",
+          supporterName: name,
+          message: message,
+          tier:
+            document.querySelector(".tier-btn.active .tier-name")
+              ?.textContent || "Buna",
+          createdAt: new Date().toISOString(),
+        })
+      );
       window.location.href = data.data.checkout_url;
     } else {
       alert("Payment failed: " + JSON.stringify(data));

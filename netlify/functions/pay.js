@@ -11,10 +11,24 @@ exports.handler = async (event) => {
       {
         method: "POST",
         headers: {
-          Authorization: "Bearer CHASECK_TEST-b0g8De2VLnKZbLH41esfc7dVUah2jx8L",
+          Authorization: `Bearer ${
+            process.env.CHAPA_SECRET_KEY ||
+            "CHASECK_TEST-b0g8De2VLnKZbLH41esfc7dVUah2jx8L"
+          }`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify({
+          amount: body.amount,
+          currency: "ETB",
+          email: body.email || "supporter@shaybuna.com",
+          first_name: body.first_name || "Fan",
+          last_name: body.last_name || "",
+          phone_number: body.phone_number,
+          tx_ref: body.tx_ref,
+          callback_url: body.callback_url,
+          return_url: body.return_url,
+          customization: body.customization,
+        }),
       }
     );
 
