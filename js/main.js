@@ -151,7 +151,9 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
   try {
     const response = await fetch("/.netlify/functions/pay", {
       method: "POST",
-
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         amount: amount.toString(),
         currency: "ETB",
