@@ -175,7 +175,7 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
       localStorage.setItem(
         "pending_tx",
         JSON.stringify({
-          tx_ref: body_data.tx_ref,
+          tx_ref: "shaybuna-" + Date.now(),
           amount: amount,
           creatorUid: "temp_uid",
           supporterName: name,
