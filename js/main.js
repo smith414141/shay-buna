@@ -162,8 +162,8 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
         last_name: name.split(" ")[1] || "",
         phone_number: phone,
         tx_ref: "shaybuna-" + Date.now(),
-        callback_url: "https://shay-buna.netlify.app/creator.html",
-        return_url: "https://shay-buna.netlify.app/creator.html",
+        callback_url: "https://shay-buna.vercel.app/creator.html",
+        return_url: "https://shay-buna.vercel.app/creator.html",
         customization: {
           title: "Shay Buna",
           description: message || "Supporting a creator on Shay Buna",
