@@ -149,7 +149,7 @@ document.getElementById("payBtn")?.addEventListener("click", async () => {
   btn.disabled = true;
 
   try {
-    const response = await fetch("/.netlify/functions/pay", {
+    const response = await fetch("/api/pay", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
